@@ -1,6 +1,5 @@
 const menu = document.getElementById('menu')
 const content = document.getElementById('content')
-const error = document.getElementById('error')
 const select = document.querySelectorAll('#selects select')
 const btnArtir = document.getElementById('btnArtir')
 const marka = document.getElementById('marka')
@@ -34,7 +33,7 @@ function show() {
                         <article class="flex flex-col bg-[#f1f3f7] rounded-[8px_8px_0_0]">
                             <div class="relative">
                                 <img alt="car" class="object-cover w-full h-52 rounded-[8px_8px_0_0]" src="${item.images[0]}" />
-                                    <i id="urek${i}" onclick="likes(this, ${i})" class="fa-solid fa-heart absolute right-2 top-2 text-[22px] cursor-pointer" style="color: #fff;"></i>
+                                    <i id="urek${i}" onclick="likes(this, ${i})" class="fa-solid fa-heart absolute right-2 top-2 text-[22px] cursor-pointer" style="color: white;"></i>
                             </div>
                             <div class="flex flex-col p-3">
                                 <h3 class="pt-2 pb-[2px] text-[18px] font-[700]">${item.price} ${item.currency}</h3>
@@ -48,20 +47,6 @@ function show() {
                      `
             })
     }else {
-        error.innerHTML = `
-            <section class="flex max-w-[400px] m-auto items-center h-full p-16 dark:bg-gray-50 dark:text-gray-800">
-                <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-                    <div class="max-w-md text-center">
-                        <h2 class="mb-8 font-extrabold text-9xl dark:text-gray-400">
-                            <span class="sr-only">Error</span>404
-                        </h2>
-                        <p class="text-2xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
-                        <p class="mt-4 mb-8 dark:text-gray-600">But dont worry, you can find plenty of other things on our homepage.</p>
-                        <a rel="noopener noreferrer" href="index.htm" class="px-8 py-3 font-semibold rounded dark:bg-red-600 dark:text-gray-50">Back to homepage</a>
-                    </div>
-                </div>
-            </section>
-        `
         btnArtir.style.display = 'none'
     }
 }
@@ -78,7 +63,7 @@ function likes(like, i) {
     if(like.style.color == 'white') {
         likeArr.map(item => {
             likeDiv.innerHTML += `
-                    <article class="flex flex-col bg-[#f1f3f7] rounded-[8px_8px_0_0]">
+                    <article class="flex flex-col bg-[#f1f3f7] rounded-[8px_8px_0_0] mt-3">
                         <div class="relative">
                             <img alt="car" class="object-cover w-full h-52 rounded-[8px_8px_0_0]" src="${item.images[0]}" />
                         </div>
